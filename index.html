@@ -232,6 +232,31 @@
       font-weight: 600;
     }
 
+    .logos-onder {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(22px, 5vw, 48px);
+      margin-bottom: 18px;
+    }
+
+    .logos-onder a {
+      display: inline-flex;
+      background: var(--wit);
+      padding: 12px 18px;
+      border-radius: 14px;
+      box-shadow: var(--schaduw);
+    }
+
+    .logos-onder img {
+      height: clamp(38px, 6vw, 50px);
+      width: auto;
+      display: block;
+    }
+
+    .footer-tekst { margin-top: 4px; }
+
     footer strong { color: var(--oranje); }
 
     footer a {
@@ -252,7 +277,6 @@
 <body>
   <div class="wrap">
     <header>
-      <img src="logo.png" alt="Logo de Bibliotheek Noordwest Veluwe" />
       <div class="titel-blok">
         <h1>Opgroeien in een <span class="accent">digitale wereld</span></h1>
         <p>Handige bronnen voor ouders</p>
@@ -274,7 +298,17 @@
     </section>
 
     <footer>
-      Samengesteld door <a href="https://annonu-mediacoaching.nl/" target="_blank" rel="noopener noreferrer">Anno Nu Mediacoaching</a> i.s.m. <a href="https://bibliotheeknwveluwe.nl/" target="_blank" rel="noopener noreferrer">Bibliotheek Noordwest Veluwe</a>
+      <div class="logos-onder">
+        <a href="https://annonu-mediacoaching.nl/" target="_blank" rel="noopener noreferrer" aria-label="Anno Nu Mediacoaching">
+          <img src="annonu.jpg" alt="Logo Anno Nu Mediacoaching" />
+        </a>
+        <a href="https://bibliotheeknwveluwe.nl/" target="_blank" rel="noopener noreferrer" aria-label="Bibliotheek Noordwest Veluwe">
+          <img src="bieb-logo.png" alt="Logo de Bibliotheek Noordwest Veluwe" />
+        </a>
+      </div>
+      <p class="footer-tekst">
+        Samengesteld door <a href="https://annonu-mediacoaching.nl/" target="_blank" rel="noopener noreferrer">Anno Nu Mediacoaching</a> i.s.m. <a href="https://bibliotheeknwveluwe.nl/" target="_blank" rel="noopener noreferrer">Bibliotheek Noordwest Veluwe</a>
+      </p>
     </footer>
   </div>
 
