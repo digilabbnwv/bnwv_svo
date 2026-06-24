@@ -185,6 +185,44 @@
     .tegel .ga-naar svg { transition: transform .18s ease; }
     .tegel:hover .ga-naar svg { transform: translate(2px, -2px); }
 
+    /* ---------- QR ---------- */
+    .qr {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 4vw, 40px);
+      background: var(--wit);
+      border-radius: var(--radius);
+      padding: clamp(22px, 3.5vw, 34px);
+      box-shadow: var(--schaduw);
+      border: 2px solid var(--oranje-zacht);
+      margin-top: clamp(26px, 4vw, 38px);
+    }
+
+    .qr img {
+      width: clamp(120px, 18vw, 168px);
+      height: auto;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .qr-tekst h2 {
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-weight: 800;
+      color: var(--grijs-donker);
+      margin-bottom: 6px;
+    }
+
+    .qr-tekst p {
+      font-size: clamp(1rem, 2.1vw, 1.12rem);
+      line-height: 1.5;
+      color: var(--grijs);
+      font-weight: 600;
+    }
+
+    @media (max-width: 560px) {
+      .qr { flex-direction: column; text-align: center; }
+    }
+
     /* ---------- Footer ---------- */
     footer {
       margin-top: clamp(36px, 5vw, 56px);
@@ -218,6 +256,14 @@
 
     <main class="grid" id="grid"></main>
 
+    <section class="qr">
+      <img src="qr.png" alt="QR-code naar deze pagina" />
+      <div class="qr-tekst">
+        <h2>Bekijk deze bronnen op uw eigen telefoon</h2>
+        <p>Scan de QR-code met de camera van uw telefoon en u opent meteen deze pagina. Zo heeft u alle links bij de hand.</p>
+      </div>
+    </section>
+
     <footer>
       Samengesteld door <strong>Anno Nu Mediacoaching</strong> i.s.m. <strong>Bibliotheek Noordwest Veluwe</strong>
     </footer>
@@ -241,7 +287,7 @@
         logo: "logos/jouwkindonline.png",
         titel: "Blijf in beeld",
         tekst: "Tips en artikelen om als ouder in gesprek te blijven over de smartphone — o.a. over uitstellen.",
-        url: "https://www.jouwkindonline.nl"
+        url: "https://www.jouwkindonline.nl/artikelen/je-kind-wil-een-smartphone-jij-wil-nog-even-uitstellen-hoe-ga-je-in-gesprek/"
       },
       {
         logo: "logos/citygames.png",
