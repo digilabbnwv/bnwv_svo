@@ -124,15 +124,37 @@
     .tegel:active { transform: translateY(-1px) scale(0.99); }
 
     .tegel .icoon {
-      width: 56px;
-      height: 56px;
+      width: 68px;
+      height: 68px;
       border-radius: 16px;
-      background: var(--oranje-zacht);
+      background: var(--wit);
+      border: 1px solid #ececec;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      overflow: hidden;
+      padding: 9px;
       flex-shrink: 0;
+    }
+
+    .tegel .icoon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Placeholder als er (nog) geen logo-bestand is */
+    .tegel .icoon.placeholder {
+      background: var(--oranje-zacht);
+      border: 2px dashed var(--oranje-licht);
+      color: var(--oranje);
+      font-weight: 800;
+      font-size: .62rem;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.1;
     }
 
     .tegel h2 {
@@ -186,7 +208,7 @@
       <img src="logo.png" alt="Logo de Bibliotheek Noordwest Veluwe" />
       <div class="titel-blok">
         <h1>Opgroeien in een <span class="accent">digitale wereld</span></h1>
-        <p>Handige bronnen voor ouders — informatieavond</p>
+        <p>Handige bronnen voor ouders</p>
       </div>
     </header>
 
@@ -197,50 +219,50 @@
     <main class="grid" id="grid"></main>
 
     <footer>
-      Samengesteld door <strong>de Bibliotheek Noordwest Veluwe</strong>
+      Samengesteld door <strong>Anno Nu Mediacoaching</strong> i.s.m. <strong>Bibliotheek Noordwest Veluwe</strong>
     </footer>
   </div>
 
   <script>
     const bronnen = [
       {
-        icoon: "⚖️",
+        logo: "logos/digitalebalans.png",
         titel: "De Digitale Balanstest",
         tekst: "Doe de test en ontdek hoe gezond de balans is tussen schermtijd en de rest van het leven.",
         url: "https://digitalebalans.nl"
       },
       {
-        icoon: "📚",
+        logo: "logos/onlinebibliotheek.png",
         titel: "Online Bibliotheek",
         tekst: "Gratis e-books en luisterboeken lenen met uw bibliotheekpas.",
         url: "https://www.onlinebibliotheek.nl"
       },
       {
-        icoon: "👀",
+        logo: "logos/jouwkindonline.png",
         titel: "Blijf in beeld",
         tekst: "Tips en artikelen om als ouder in gesprek te blijven over de smartphone — o.a. over uitstellen.",
         url: "https://www.jouwkindonline.nl"
       },
       {
-        icoon: "💬",
+        logo: "logos/citygames.png",
         titel: "City Games gesprekstool",
         tekst: "Een vragengenerator om makkelijk met uw kind in gesprek te gaan over gamen.",
         url: "https://toolkit.citygamesleague.com/gesprekstool#vragen-generator"
       },
       {
-        icoon: "🎮",
+        logo: "logos/gamewijzer.png",
         titel: "Gamewijzer",
         tekst: "Welke games passen bij de leeftijd van uw kind? Bekijk leeftijdsadvies en uitleg.",
         url: "https://www.gamewijzer.nl"
       },
       {
-        icoon: "🎬",
+        logo: "logos/snapjijhetnog.png",
         titel: "Snap jij het nog?",
         tekst: "50 korte afleveringen met tips over sociale media, games en online trends — per onderwerp.",
         url: "https://snapjijhetnog.com"
       },
       {
-        icoon: "🤝",
+        logo: "logos/chatlicense.png",
         titel: "Chatlicense",
         tekst: "Geef uw kind het voordeel van de twijfel en leer samen bewust en veilig chatten.",
         url: "https://www.chatlicense.com"
@@ -257,7 +279,10 @@
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.innerHTML = `
-        <div class="icoon" aria-hidden="true">${b.icoon}</div>
+        <div class="icoon">
+          <img src="${b.logo}" alt="Logo ${b.titel}"
+               onerror="this.parentNode.classList.add('placeholder'); this.parentNode.textContent='logo hier';" />
+        </div>
         <h2>${b.titel}</h2>
         <p>${b.tekst}</p>
         <span class="ga-naar">Open ${pijl}</span>
